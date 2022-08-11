@@ -120,9 +120,37 @@ function once(callback) {
 }
 
 // /*** Uncomment these to check your work! ***/
-const onceFunc = once(addByTwo);
-console.log(onceFunc(4)); // => should log 6
-console.log(onceFunc(10)); // => should log 6
-console.log(onceFunc(9001)); // => should log 6
+// const onceFunc = once(addByTwo);
+// console.log(onceFunc(4)); // => should log 6
+// console.log(onceFunc(10)); // => should log 6
+// console.log(onceFunc(9001)); // => should log 6
+
+//------------------------------------------------------------------------------------ //
+
+//----------------------------CHALLENGE 5---------------------------------------------- //
+
+/**
+ * Write a function after that takes the number of times the callback needs to be called before being executed as the first parameter and the callback as the second parameter.
+ */
+
+function after(count, func) {
+  let called_count = 1;
+
+  return function () {
+    called_count++;
+    if (count === called_count) {
+      return func();
+    }
+  };
+}
+
+// /*** Uncomment these to check your work! ***/
+// const called = function () {
+//   console.log('hello');
+// };
+// const afterCalled = after(3, called);
+// afterCalled(); // => nothing is printed
+// afterCalled(); // => nothing is printed
+// afterCalled(); // => 'hello' is printed
 
 //------------------------------------------------------------------------------------ //
