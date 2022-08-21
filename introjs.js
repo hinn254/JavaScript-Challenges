@@ -100,3 +100,44 @@ letterExists("superman", "e"); //=> true
 letterExists("starship", "S"); //=> false
 letterExists("th1s", "1"); //=> true
 letterExists("he!lo", "!"); //=> true
+
+/* =========== *
+ * Challenge 9 *
+ * ============ */
+
+function myIndexOf(array, ele) {
+  // your code here...
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] == ele) {
+      console.log(i);
+      return i;
+    }
+  }
+  console.log(-1);
+  return -1;
+}
+
+myIndexOf([1, 2, 3, 4, 5], 5); //=> 4
+myIndexOf(["a", "b", "c"], "a"); //=> 0
+myIndexOf(["a", "b", "c"], "d"); //=> -1
+
+/* =========== *
+ * Challenge 10 *
+ * ============ */
+
+function unique(array) {
+  //your code goes here...
+  let container = {};
+  let newArr = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!container[array[i]]) {
+      container[array[i]] = true;
+      newArr.push(array[i]);
+    }
+  }
+  console.log(newArr);
+  return newArr;
+}
+
+unique([1, 1, 2, 3, 3]); //=> [1, 2, 3]
+unique(["a", "a", "c", "aa", "b", "b"]); // => ["a", "c", "aa", "b"]
