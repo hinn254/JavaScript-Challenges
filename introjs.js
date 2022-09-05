@@ -252,3 +252,27 @@ var students = [
 ];
 
 console.log(passingStudents(students)); // => [ 'Marco', 'Donna' ]
+
+function arrayBuilder(count) {
+  // your code here...
+
+  let elementArray = [];
+
+  if (Object.keys(count).length < 1) {
+    return elementArray;
+  } else {
+    function checkNum(val, key) {
+      if (val <= 0) {
+        return elementArray;
+      }
+      elementArray.push(key);
+      return checkNum(val - 1, key); //0
+    }
+
+    for (let [key, vals] of Object.entries(count)) {
+      checkNum(vals, key);
+    }
+  }
+
+  return elementArray;
+}
