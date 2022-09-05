@@ -141,3 +141,114 @@ function unique(array) {
 
 unique([1, 1, 2, 3, 3]); //=> [1, 2, 3]
 unique(["a", "a", "c", "aa", "b", "b"]); // => ["a", "c", "aa", "b"]
+
+/* ========== *
+ * Extension 1 *
+ * =========== */
+
+function arrayBuilder(count) {
+  // your code here...
+  let arr = [];
+  for (let [key, vals] of Object.entries(count)) {
+    console.log(key, vals);
+    for (let i = 0; i < vals; i++) {
+      arr.push(key);
+    }
+  }
+  return arr;
+}
+
+/* ========== *
+ * Extension 2 *
+ * =========== */
+
+function objectBuilder(count) {
+  // your code here...
+  let obj = {};
+  for (let i = 0; i <= count; i++) {
+    obj[i] = 5 * i;
+  }
+  return obj;
+}
+
+//Uncomment the lines below to test your function:
+
+console.log(objectBuilder(4)); //=> {
+//   0: 0,
+//   1: 5,
+//   2: 10,
+//   3: 15,
+//   4: 20,
+// }
+console.log(objectBuilder(0)); //=> { 0: 0 }
+
+/* ========== *
+ * Extension 3 *
+ * =========== */
+
+function secretCipher(sentence, cipher) {
+  // your code here...
+}
+
+//Uncomment the lines below to test your function:
+
+// console.log(secretCipher("lqq me on flcebzzk" , { l : "a", q : "d", z: "o"})); //=> "add me on facebook"
+// console.log(secretCipher("where are you???" , { v : "l", '?' : "!"})) //=> "where are you!!!"
+// console.log(secretCipher("twmce" , { m : "n", t : "d", w : "a"})); //=> "dance"
+
+/* ========== *
+ * Extension 4 *
+ * =========== */
+
+function passingStudents(students) {
+  // your code here...
+  let results = [];
+  for (let i of students) {
+    let name = i.name;
+    let noOfSub = 0;
+    let sumofgrades = 0;
+    for (let j of i.grades) {
+      sumofgrades += j.score;
+      noOfSub++;
+    }
+    let average = sumofgrades / noOfSub;
+    results.push({ name, average });
+  }
+  return results.filter((item) => {
+    if (item.average > 70) return item.name;
+  });
+}
+
+//Uncomment the lines below to test your function:
+
+var students = [
+  {
+    name: "Marco",
+    id: 12345,
+    grades: [
+      { id: 0, score: 65 },
+      { id: 1, score: 75 },
+      { id: 2, score: 85 },
+    ],
+  },
+  {
+    name: "Donna",
+    id: 55555,
+    grades: [
+      { id: 0, score: 100 },
+      { id: 1, score: 100 },
+      { id: 2, score: 100 },
+    ],
+  },
+  {
+    name: "Jukay",
+    id: 94110,
+    grades: [
+      { id: 0, score: 65 },
+      { id: 1, score: 60 },
+      { id: 2, score: 65 },
+    ],
+  },
+];
+
+console.log(passingStudents(students)); // => [ 'Marco', 'Donna' ]
