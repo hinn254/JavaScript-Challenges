@@ -1,3 +1,8 @@
+
+### CLOSURES
+
+This repository contains solutions to Javascript Closures derived from challenges in CSBIN [http://csbin.io/closures/roomnumber%C2%A0]
+
 # JAVASCRIPT CHALLENGES
 
 From basic to advanced: test how well you know JavaScript, refresh your knowledge a bit, or prepare for your coding interview! 💪 🚀
@@ -37,3 +42,4 @@ Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, do
 </details>
 
 ---
+
