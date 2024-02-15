@@ -271,3 +271,34 @@ function divisibleByFivePairSum(array){
 
 console.log(divisibleByFivePairSum([1, 5, 2, 0, 4])); // => [ [ 0, 4 ], [ 1, 3 ] ]
 console.log(divisibleByFivePairSum([13, 22, 8, -3, 12])); // => [[ 0, 1 ], [ 0, 3 ], [ 0, 4 ], [ 1, 2 ], [ 2, 3 ], [ 2, 4 ]]
+
+
+
+/* =========== *
+* Challenge 14 *
+* ============ */
+
+function highestScore(students) {
+  // your code here...
+const highestValue =	students.reduce((highest, currentValue) => {  	
+  	if(currentValue.score > highest.score){
+		return currentValue
+          } else{
+		return highest
+          }
+}, students[0])
+ return highestValue
+}
+
+//Uncomment the lines below to test your function:
+
+var students = [
+{name: 'Will Sentance', id: 128, score: -42},
+{name: 'Jamie Bradshaw', id: 32, score: 57},
+{name: 'Lisa Simpson', id: 2, score: 99},
+{name: 'Luke Skywalker', id: 256, score: 94}
+];
+
+console.log(highestScore(students)); //=> 'LS2'
+
+
